@@ -1,151 +1,115 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/cards.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
-    <title>Cassettes</title>
-    <link rel="shortcut icon" href="logo.png">
-    <style>
-    #cassettes{
-    background-color: #B51B75;
-    pointer-events: none;
+/* GENERALES */
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: "Nunito", sans-serif;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+
+body {
+    font-family: "Nunito", sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #F8D082;
+}
+
+.logo {
+    filter: drop-shadow(5px 5px 5px rgba(181,27,117,1));
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    align-items: center;
+    padding: 0px 15px;
+    margin-bottom: 2px;
+}
+
+.logo img{
+    width: 240px;
+    height: 240px;
+}
+
+#vinilo{
+    animation-duration:2000s;
+    animation-name: logo;   
+    animation-iteration-count: infinite;
+    animation-direction: normal;
+    animation-delay: 0ms;
+}
+
+@keyframes logo{
+    from{
+        scale: 1;
     }
+    to{
+        transform: rotate(129600deg);
+    }
+}
 
-    </style>
-</head>
-<body>
-    <!-- NAVBAR -->
-    <header class="navbar">
-        <div class="logo">
-            <a href="inicio.html"><img src="../logo.png" alt="logo"></a>
-            <h1><a href="../inicio.html">VinylTape</a></h1>
-        </div>
-        <div class="navbar-items-div">
-            <div class="mitad1">
-            <a class="navbaritems" id="LogIn" role="button" href="login.html">Iniciar sesión</a>
-            <a class="navbaritems" id="cassettes" role="button" href="cassette.html">Cassettes</a>
-            <div class="dropdown">
-                <a class="navbaritems" role="button">Productos</a>
-                <div class="dropdown-content">
-                    <a href="cd.html">CDs</a>
-                    <a href="vinilo.html">Vinilos</a>
-                </div>
-            </div>
-            </div>
-            <div class="mitad2">
-            <div class="dropdown-responsive">
-                <div id="menu">
-                <a class="navbaritems" href="#" role="button"> 
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="25" height="25" viewBox="0 0 50 50">
-                        <path d="M 5 8 A 2.0002 2.0002 0 1 0 5 12 L 45 12 A 2.0002 2.0002 0 1 0 45 8 L 5 8 z M 5 23 A 2.0002 2.0002 0 1 0 5 27 L 45 27 A 2.0002 2.0002 0 1 0 45 23 L 5 23 z M 5 38 A 2.0002 2.0002 0 1 0 5 42 L 45 42 A 2.0002 2.0002 0 1 0 45 38 L 5 38 z"></path>
-                        </svg>
-                </a>
-            </div>
-                <div class="dropdown-content-responsive">
-                    <a href="inicio.html">Inicio</a>
-                    <a href="login.html">Iniciar sesión</a>
-                    <a href="vinilo.html">Vinilos</a>
-                    <a href="cd.html">CDs</a>
-                    <a id="invisible" href="cassette.html">Cassettes</a>
-                </div>
-            </div>
-            </div>
-        </div>
-    </header>
-    <!------------------------------------------------------------>
+#aguja{
+    position: absolute;
+}
 
+.login-container {
+    background-color: #ffca60;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
-    <!-- CARDS -->
-    <main>
-        <!-- TITULO -->
-        <div id="contenedor1">
-            <h1>Cassettes</h1>
-        </div>
+.contenedor{
+    position: relative;
+    bottom: 80px;
+}
 
-        <!-- CARDS -->
-        <div id="contenedor2">
-        <div id="contenedor-cards">
-            <div class="card">
-                <div class="card-img">
-                    <img class="imagenvinilo" src="https://store.taylorswift.com/cdn/shop/files/oIrR9qXXeQRc3OuzsMq1YAqie8MY8mhq-1.png?v=1711052313&width=3302" alt="">
-                </div>
-                <div>
-                    <h3 id="titulo">INSERTE TíTULO</h3>
-                </div>
-                <div>
-                    <p id="precio">$INSERTE PRECIO</p>
-                </div>
-                <div>
-                    <p id="stock">STOCK: X</p>
-                </div>
-                    <br>
-                <div>
-                    <a id="carrito" role="button" href="">Añadir al carrito</a>
-                </div>
-            </div>
+.login-form {
+    max-width: 300px;
+    min-width: 250px;
+    transform: scale(1.05);
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    flex-flow: wrap;
+}
 
-            <div class="card">
-                <div class="card-img">
-                    <img class="imagenvinilo" src="https://store.taylorswift.com/cdn/shop/files/oIrR9qXXeQRc3OuzsMq1YAqie8MY8mhq-1.png?v=1711052313&width=3302" alt="">
-                </div>
-                <div>
-                    <h3 id="titulo">INSERTE TíTULO</h3>
-                </div>
-                <div>
-                    <p id="precio">$INSERTE PRECIO</p>
-                </div>
-                <div>
-                    <p id="stock">STOCK: X</p>
-                </div>
-                    <br>
-                <div>
-                    <a id="carrito" role="button" href="">Añadir al carrito</a>
-                </div>
-            </div>
+.login-form h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
 
-            <div class="card">
-                <div class="card-img">
-                    <img class="imagenvinilo" src="https://store.taylorswift.com/cdn/shop/files/oIrR9qXXeQRc3OuzsMq1YAqie8MY8mhq-1.png?v=1711052313&width=3302" alt="">
-                </div>
-                <div>
-                    <h3 id="titulo">INSERTE TíTULO</h3>
-                </div>
-                <div>
-                    <p id="precio">$INSERTE PRECIO</p>
-                </div>
-                <div>
-                    <p id="stock">STOCK: X</p>
-                </div>
-                    <br>
-                <div>
-                    <a id="carrito" role="button" href="">Añadir al carrito</a>
-                </div>
-            </div>
+.login-form input[type="text"],
+.login-form input[type="password"] {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
 
-            <div class="card">
-                <div class="card-img">
-                    <img class="imagenvinilo" src="https://store.taylorswift.com/cdn/shop/files/oIrR9qXXeQRc3OuzsMq1YAqie8MY8mhq-1.png?v=1711052313&width=3302" alt="">
-                    <h3 id="titulo">INSERTE TíTULO</h3>
-                    <p id="precio">$INSERTE PRECIO</p>
-                    <p id="stock">STOCK: X</p>
-                    <br>
-                    <a id="carrito" role="button" href="">Añadir al carrito</a>
-                </div>
-            </div>
+.login-form button {
+    width: 100%;
+    padding: 10px;
+    background-color: #c5378a;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-        </div>
-        </div>
-        
-    </main>
-    <!------------------------------------------------------------>
-
-    <footer>
-
-    </footer>
-</body>
-</html>
-</a>
+.login-form button:hover {
+    background-color: #b63480;
+}
